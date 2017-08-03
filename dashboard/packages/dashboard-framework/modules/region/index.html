@@ -1,0 +1,66 @@
+<template name="region">
+    <div class="_flex">
+        <div class="_flex-1">
+            <table class="ui celled table selectable">
+                <thead>
+                    <tr>
+                        <th>省／直辖市</th>
+                        <!-- <th  width="100">操作</th> -->
+                    </tr>
+                </thead>
+                <tbody>
+                	{{#each level1}}
+                    <tr>
+                        <td class="region-select-1">{{name}}</td>
+                        <!-- <td>
+                        	<a href="#" onclick="_region.delete('{{_id}}')" >删除</a>| <a href="/region/edit?id={{_id}}">修改</a>
+                        </td> -->
+                    </tr>
+                    {{/each }}
+                </tbody>
+            </table>
+        </div>
+
+        <div class="_flex-1">
+            <table class="ui celled table selectable">
+                <thead>
+                    <tr>
+                        <th>市</th>
+                        <!-- <th  width="100">操作</th> -->
+                    </tr>
+                </thead>
+                <tbody>
+                	{{#each level2}}
+                    <tr>
+                        <td  class="region-select-2" >{{name}}</td>
+                        <!-- <td>
+                        	<a href="#" onclick="_region.delete('{{_id}}')" >删除</a>| <a href="/region/edit?id={{_id}}">修改</a>
+                        </td> -->
+                    </tr>
+                    {{/each }}
+                </tbody>
+            </table>
+        </div>
+
+        <div class="_flex-1">
+            <table class="ui celled table selectable">
+                <thead>
+                    <tr>
+                        <th>区县</th>
+                        <!-- <th  width="100">操作</th> -->
+                    </tr>
+                </thead>
+                <tbody>
+                	{{#each level3}}
+                    <tr>
+                        <td class="region-select-3">{{name}}</td>
+                        <!-- <td>
+                        	<a href="#" onclick="_region.delete('{{_id}}')" >删除</a>| <a href="/region/edit?id={{_id}}">修改</a>
+                        </td> -->
+                    </tr>
+                    {{/each }}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,35 @@
+<template name="categoryEdit">
+	<div class="min-warp">
+        <div class="ui breadcrumb">
+            <a class="section" href="/">系统首页</a>
+            <div class="divider"> / </div>
+            <a class="section" href="/category">分类管理</a>
+            {{#if parent}}
+			<div class="divider"> / </div>
+            <a class="section" href="/category?parent={{parent._id}}">{{parent.name}}</a>
+            {{/if}}
+            <div class="divider"> / </div>
+            <div class="active section">修改 {{category.name}} 信息</div>
+        </div>
+        <div class="ui form">
+            <div class="field">
+                <label>名称:</label>
+                <input type="text" id="name" value="{{category.name}}" >
+            </div>
+
+            <div class="field">
+                <label>简介:</label>
+                <input type="text" id="summary" value="{{category.summary}}" >
+            </div>
+             <div class="field">
+                <label>排序:</label>
+                <input type="number" id="orderBy" value="1000" >
+            </div>
+            {{>upload id='thumb' label="分类封面" objs=category.thumb}}
+            <div class="ui positive right labeled icon button" id="save">
+                保存
+                <i class="checkmark icon"></i>
+            </div>
+        </div>
+    </div>
+</template>

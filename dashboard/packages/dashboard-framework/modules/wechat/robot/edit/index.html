@@ -1,0 +1,29 @@
+<template name="robotKnowledgeEdit">
+    <div class="min-warp">
+        <div class="ui breadcrumb">
+            <a class="section" href="/">系统首页</a>
+            <div class="divider"> / </div>
+            <a class="section" href="/robot">ROBOT知识库</a>
+            <div class="divider"> / </div>
+            <div class="active section">修改</div>
+        </div>
+        <div class="ui form">
+            <div class="field">
+                <label>关键词:</label>
+                <input type="text" id="key" value="{{arrJoin knowledge.q}}" placeholder="以空格分隔">
+            </div>
+            <div class="field">
+                <label>排序:</label>
+                <input type="number" id="orderBy" value="{{knowledge.orderBy}}" placeholder="越大越靠前">
+            </div>
+            <div class="field">
+                <label>内容:</label>
+                <textarea id="content">{{knowledge.content}}</textarea>
+            </div>
+            <div class="ui positive right labeled icon button" id="save">
+                保存
+                <i class="checkmark icon"></i>
+            </div>
+        </div>
+    </div>
+</template>

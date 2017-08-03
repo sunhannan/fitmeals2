@@ -1,0 +1,1 @@
+WxMedia = new Meteor.Collection("WxMedia");

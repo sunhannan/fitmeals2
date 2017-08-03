@@ -1,0 +1,16 @@
+{
+  "apps": [
+    {
+      "name": "www",
+      "script": "./www/bundle/main.js",
+      "log_date_format": "YYYY-MM-DD",
+      "exec_mode": "fork_mode",
+      "env": {
+        "MONGO_URL": "mongodb://localhost:27017/fami2u",
+        "PORT": "3000",
+        "ROOT_URL": "http://fami2u.com",
+        
+      }
+    }
+  ]
+}

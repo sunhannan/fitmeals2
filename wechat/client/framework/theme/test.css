@@ -1,0 +1,17 @@
+.test-btn{
+	background:#5e95b3;
+	width:180px;
+	text-align: center;
+	line-height: 35px;
+	display:inline-block;
+	color:#fff;
+}
+.test-btn:hover{
+	color:#fff;
+}
+.test-btn:active{
+	color:#fff;
+}
+.cursor{
+	cursor:pointer;
+}

@@ -1,0 +1,105 @@
+.account{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+	background-size: cover;
+	background-position: center;
+}
+.account:after{
+	content: "";
+	display: block;
+	/* background: rgba(0,0,0,.3); */
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 10;
+}
+.account-bg{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	background: #fff;
+	-webkit-transform: translate(-50%,-50%);  
+    -ms-transform: translate(-50%,-50%);  
+    transform: translate(-50%,-50%); 
+    border-radius: 10px;
+    box-shadow:  2px 0 2px #666;
+    overflow: hidden;
+    z-index: 100;
+}
+.account-form{
+	float: right;
+	background: #eee;
+	padding: 30px;
+	width: 400px;
+}
+.account-input{
+	padding: 10px;
+}
+.account-input input{
+	display: block;
+	-webkit-appearance: none;
+	width: 100%;
+	height: 45px;
+	padding: 0px 10px;
+	border: 1px solid #999;
+	font-size: 16px;
+	outline: none;
+
+}
+.account-logo{
+	text-align: left;
+	padding-bottom: 10px;
+	font-size: 3.2rem;
+	font-weight: 800;
+	display: block;
+	color: #333;
+	padding-left: 10px;
+	line-height: 3.2rem;
+}
+.account-logo i{
+	font-size: 1.2rem;
+	font-style:normal
+}
+.account-logo p{
+	display: block;
+	font-size: 1rem;
+	padding-top: 15px;
+	color: #666;
+}
+.account-logo b{
+	color: #0694ca;
+}
+.account-logo img{
+	max-width: 200px;
+
+}
+.account-tips{
+	line-height: 30px;
+	padding: 0px 15px;
+}
+.account-btns{
+	width: 100%;
+	padding: 0px 15px 0px 15px;
+}
+.account-btn{
+	margin-top: 10px;
+	text-align: center;
+	background: #121212;
+	color: #fff;
+	line-height: 45px;
+	font-size: 16px;
+	letter-spacing: 5px;
+	cursor: pointer;
+}
+.account-btn:hover{
+	background: #333;
+}
+.account-input-error {
+	border: 1px solid #d36969 !important;
+}

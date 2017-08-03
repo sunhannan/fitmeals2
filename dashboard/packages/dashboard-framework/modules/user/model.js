@@ -1,0 +1,1 @@
+ ClientRoles = new Mongo.Collection(null);

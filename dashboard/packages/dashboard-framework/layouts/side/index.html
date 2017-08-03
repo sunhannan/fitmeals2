@@ -1,0 +1,33 @@
+<template name="side">
+    <div class="side">
+        <div class="list">
+            {{#each menus}} 
+                {{#if checkRole}} 
+                        {{#if children}}
+                            <div class="item  l1">
+                                <div class="txt _animation">{{name}}</div>
+                                <i class="fa fa-bars _animation"></i>
+                                <div class="children ">
+                                    {{#each children}} 
+                                        {{#if checkRole}}
+                                            <a class="item _animation l2" href="{{target}}">
+                                                <div class="txt2 _animation">{{name}}</div>
+                                                <i class="fa fa-angle-right _animation"></i>
+                                            </a>
+                                        {{/if}} 
+                                    {{/each }}
+                                </div>
+                            </div>
+                        {{else}} 
+                            {{#if checkRole}}
+                                <a class="item l0" href="{{target}}">
+                                    <div class="txt _animation">{{name}}</div>
+                                    <i class="fa fa-angle-right _animation"></i>
+                                </a>
+                            {{/if }} 
+                        {{/if }} 
+                {{/if }} 
+            {{/each }}
+        </div>
+    </div>
+</template>

@@ -1,0 +1,16 @@
+<template name="upload">
+    <div class="upload _flex">
+        <label>{{label}}:</label>
+        <div class="_flex-1 _flex">
+            <div class="upload-thumbs _flex" id="ut_{{id}}" multiple="{{multiple}}">
+            		{{#each objsIt}}
+						<div class="upload-thumb-item animated bounceIn" title="点击取消" style="background-image:url({{this}}?x-oss-process=image/resize,m_lfit,w_120,limit_0/auto-orient,0/quality,q_52)" data-src="{{this}}"></div>
+            		{{/each}}
+            </div>
+            <div class="upload-btn">
+                <i class="fa fa-cloud-upload upload-btn-icon _animation"></i>
+            	 <input type="file" name="file" class="upload-btn-file" title="上传文件至OSS" value="" accept="{{acceptSelect}}">
+            </div>
+        </div>
+    </div>
+</template>

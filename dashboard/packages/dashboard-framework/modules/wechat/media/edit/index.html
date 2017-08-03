@@ -1,0 +1,48 @@
+<template name="wxMediaEdit">
+	<div class="min-warp">
+        <div class="ui breadcrumb">
+            <a class="section" href="/">系统首页</a>
+            <div class="divider"> / </div>
+            <a class="section" href="/wx/media">微信图文管理</a>
+            <div class="divider"> / </div>
+            <div class="active section">《{{media.title}}》修改信息</div>
+        </div>
+        <div class="ui form">
+            <div class="field">
+                <label>分类:</label>
+                <select id="category">
+                    {{#each categorys 'root'}}
+                            <optgroup label="{{name}}">
+                                {{#each categorys _id}}
+                                 <option value="{{_id}}"  {{checkStatus media.category _id }}>{{name}}</option>
+                                 {{/each}}
+                            </optgroup>
+                           
+                        {{/each}}
+                </select>
+            </div>
+            <div class="field">
+                <label>排序:</label>
+                <input type="number" id="orderBy" value="{{media.orderBy}}" placeholder="越大越靠前">
+            </div>
+            <div class="field">
+                <label>上线状态:</label>
+                <select id="status">
+                    <option value="1"  {{checkStatus media.status true }}>上线</option>
+                    <option value="0"  {{checkStatus media.status false }}>下线</option>
+                </select>
+            </div>
+            <div class="field">
+                <label>推荐状态:</label>
+                <select id="recommend">
+                    <option value="0"  {{checkStatus media.recommend false }}>正常</option>
+                    <option value="1"  {{checkStatus media.recommend true }}>推荐</option>
+                </select>
+            </div>
+            <div class="ui positive right labeled icon button" id="save">
+                保存
+                <i class="checkmark icon"></i>
+            </div>
+        </div>
+    </div>
+</template>

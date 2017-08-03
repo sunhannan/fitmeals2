@@ -1,0 +1,22 @@
+<template name="regionSelect">
+	<input type="text" class="_region-select-input" />
+	<input type="text" class="_region-select-input-id" id="{{id}}" />
+	<div class="_region-select-cover">
+		<div class="_region-select">
+			<div class="_region-select-header">
+				
+				<b class="_region-all">选择地区:</b>
+				<b class="_region-0"></b>
+				<b class="_region-1"></b>
+				<b class="_region-2"></b>
+				<div class="_region_close"><i class="fa fa-close"></i></div>
+			</div>
+			<div class="_region_select_list">
+				{{#each regions}}
+					<div class="_region_select_item" data-level={{level}}>{{name}}</div>
+				{{/each}}
+				<div class="clear"></div>
+			</div>
+		</div>
+	</div>
+</template>

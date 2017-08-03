@@ -1,0 +1,87 @@
+<template name="resume">
+	<i class="fa fa-remove" id="close" ></i>
+	<div class="_flex resume">
+		<div class="rside">
+			<div class="avatar">
+				<div style="background-image:url({{owner.profile.avatar}});"></div>
+			</div>
+			<div class="count">
+				收看量：{{owner.profile.count.view}}<br/>
+				直播时长：{{owner.profile.count.time}}<br/>
+				被收藏量：{{owner.profile.count.fovar}}<br/>
+				LIVE：{{owner.profile.count.live}}<br/>
+				收到打赏：{{{c4mat owner.profile.count.gift}}}<br/>
+				参与小组：{{owner.profile.count.group}}<br/>
+				LIVE订阅：{{owner.profile.count.users}}<br/>
+			</div>
+			<div class="price">
+				日薪：¥ {{fix owner.profile.price.day}}<br/>
+				周薪：¥ {{fix owner.profile.price.week}}<br/>
+				月薪：¥ {{fix owner.profile.price.month}}<br/>
+			</div>
+		</div>
+		<div class="rside-fix"></div>
+		<div class="_flex-2 details">
+			<div class="nickname">{{owner.profile.nickname}} <i class="fa fa-send-o" ></i></div>
+			<div class="address"><i class="fa fa-map-marker"></i> {{resume.address}} </div>
+			<div class="line">
+				<div class="title">掌握<br/>技能</div>
+				<div class="content">{{{trans resume.skill}}}</div>
+			</div>
+			<div class="line">
+				<div class="title">项目<br/>经历</div>
+				<div class="content">{{{trans resume.project}}}</div>
+			</div>
+			<div class="line">
+				<div class="title">工作<br/>经历</div>
+				<div class="content">{{{trans resume.work}}}</div>
+			</div>
+			<div class="line">
+				<div class="title">教育<br/>背景</div>
+				<div class="content">{{{trans resume.edu}}}</div>
+			</div>
+			<div class="line">
+				<div class="title">个人<br/>简介</div>
+				<div class="content">{{{trans resume.summary}}}</div>
+			</div>
+		</div>
+		<div class="_flex-1 details2">
+			<div class="line">
+				<div class="title">直播历史</div>
+				<div class="content">
+					{{#each streams}}
+						<a class="link" href="/s/{{key}}"><i class="fa fa-tv"></i> {{title}}</a>
+					{{/each }}
+				</div>
+			</div>
+			<div class="line">
+				<div class="title">工作组</div>
+				<div class="content">
+					{{#each groups}}
+						<div class="link2 _flex"> 
+							<div class="logo" style="background-image:url({{logo}})"></div>
+							<div class="_flex-1"> 
+								 <div class="name">{{name}}</div>
+								 <div class="summary">{{summary}}</div>
+							 </div>
+						</div>
+					{{/each }}
+				</div>
+			</div>
+			<div class="line">
+				<div class="title">用户标签</div>
+				<div class="content">
+					{{#each tags}}
+						<a class="link3" >{{key}}</a>
+					{{/each }}
+				</div>
+			</div>
+		</div>
+	</div>
+</template>
+<body>
+	<div class="resume-container ">
+		
+	</div>
+</body>
+ 

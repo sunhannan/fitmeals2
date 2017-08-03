@@ -1,0 +1,45 @@
+<template name="XwuGrid">
+    <table class="ui celled table" id="{{id}}">
+        <thead>
+            <tr>
+                {{#each option.columns}}
+                <th>{{title}}</th>
+                {{/each }}
+            </tr>
+        </thead>
+        <tbody>
+            {{#each row in rows}}
+            <tr>
+                {{#each column in option.columns}}
+                <td>{{cell row column}}</td>
+                {{/each }}
+            </tr>
+            {{/each }}
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>
+                    {{#if result }} 共 {{result.total }} 条记录, {{current}}／{{total}}页 {{else}} 数据统计中... {{/if}}
+                </th>
+                <th colspan="2">
+                    <div class="ui right floated pagination menu">
+                        {{#if compare current 1}}{{else}}
+                        <a class="icon item xwuGrid-left">
+                            <i class="left chevron icon"></i>
+                        </a>
+                        {{/if}}
+                        {{#each num in pages}}
+                        	<a class="item xwuGrid-item  {{#if compare num current }} xuwGrid-item-cur {{/if}}">{{num}}</a>
+                      	{{/each }}
+                        {{#if compare current total}}{{else}}
+                        <a class="icon item xwuGrid-right">
+                            <i class="right chevron icon"></i>
+                        </a>
+                        {{/if}}
+                        
+                    </div>
+                </th>
+            </tr>
+        </tfoot>
+    </table>
+</template>

@@ -1,0 +1,17 @@
+<template name="thumbLesson">
+    {{#with lesson}}
+        <div class="thumbStream">
+            <a class="wp _animation thumbStream-item" style="background-image:url({{thumb}})" href="/video/{{video}}">
+                <div class="user _flex">
+                    <div class="avatar" style="background-image:url({{user.profile.avatar}})"></div>
+                    <div class="txt _flex-1">
+                        <div class="nickname">{{user.profile.nickname}}</div>
+                        <div class="title">{{title}}</div>
+                    </div>
+                </div>
+                <div class="tags">{{{arrb key}}} </div>
+                <div class="view"><i class="fa fa-eye"></i> {{count.view}} </div>
+            </a>
+        </div>
+    {{/with}}
+</template>

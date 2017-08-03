@@ -1,0 +1,139 @@
+.side{
+	background: #404040;
+	position: fixed;
+	top: 50px;
+	width: 160px;
+	left: 0px;
+	padding-bottom: 50px;
+	height: 100%;
+	overflow-y: auto;
+	.item{
+		width: 100%;
+		display: block;
+		position: relative;
+		cursor: pointer;
+		i{
+			position: absolute;
+			right:10px;
+			top:0px;
+			line-height: 45px;
+			color:#fff;
+
+		}
+		.txt{
+			line-height: 45px;
+			color:#fff;
+			padding-left:5px;
+
+		}
+		.txt2{
+			line-height: 45px;
+			color:#fff;
+			padding-left:10px;
+		}
+		.children{
+			display: none;
+		}
+	}
+	.children-open .txt{
+		background-color:  #8abbcc;
+	}
+	div.item{
+		
+
+	}
+	a.item{
+		line-height: 45px;
+		color:#999;
+		font-size:14px;
+		
+	}
+	.txt:hover{
+		padding-left:7px;
+		background-color:#a2bfca;
+	}
+	.txt2:hover{
+		padding-left:12px;
+
+	}
+	.cur-item{
+		background:#353535;
+		box-shadow: inset 2px 2px 2px #333;
+	}
+}
+
+/* .side-logo:after{
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	background: -webkit-gradient(linear, 30% 0 , 0 50%, from(rgba(64,64,64,1)),to(rgba(64,64,64,.0)));
+	z-index: 1;
+} */
+.side-logo-nick{
+	color: #999;
+	position: relative;
+	z-index: 10;
+	text-align: right;
+	cursor: pointer;
+}
+.side-logo-nick:hover{
+	color: #fff;
+}
+.side-navi-item{
+	line-height: 40px;
+	display: block;
+	color: #999;
+	cursor: pointer;
+	position: relative;
+
+}
+
+.side-navi-main{
+	padding-left: 10px;
+}
+.side-navi-item:hover{
+	background: #8abbcc;
+	color: #fff;
+}
+.side-navi-item .fa-angle-right{
+	position: absolute;
+	top: 0px;
+	right: 15px;
+	line-height: 40px;
+}
+.side-navi-item:hover .fa-angle-right{
+	right: 10px;
+}
+.side-navi-item .fa-plus{
+	position: absolute;
+	top: 0px;
+	right: 15px;
+	line-height: 40px;
+}
+.side-navi-item:hover .fa-plus{
+	right: 10px;
+}
+.side-navi-item .fa-bars{
+	position: absolute;
+	top: 0px;
+	right: 15px;
+	line-height: 40px;
+}
+.side-navi-item:hover .fa-bars{
+	right: 10px;
+}
+.side-navi-children{
+	background: #444;
+	display: none;
+}
+.side-navi-item:hover .side-navi-children{
+	height: auto;
+}
+.side-navi-item:hover .side-navi-children .side-navi-item:hover{
+	background: #a2bfca;
+}
+

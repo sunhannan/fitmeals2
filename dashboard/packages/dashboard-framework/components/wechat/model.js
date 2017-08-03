@@ -1,0 +1,1 @@
+wxMessages = new Meteor.Collection("wxmessages");

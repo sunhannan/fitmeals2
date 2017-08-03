@@ -1,0 +1,26 @@
+<template name="dashboard">
+    <div class="dashboard-header _flex">
+        <a class="logo _animation" href="/"> {{{logo}}}  </a>
+        <div class="center _flex-1 _flex">
+        </div>
+        <div class="right">
+            <div class="ui floating dropdown right " style="text-align: right;min-width:140px;" id="header-dropdown">{{currentUser.profile.nickname}}
+             <i class="dropdown icon"></i>
+                <div class="menu">
+                    {{#each links}}
+                        <a href="{{target}}"  class="item"><i class="caret right icon"></i> {{name}}</a>
+                    {{/each }}
+                    <a href="/account/pwd"  class="item"><i class="key icon"></i> 修改密码</a>
+                    <a href="/account/logout" class="item"><i class="sign out icon"></i> 注销账户</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="dashboard-header-fixed"></div>
+    <div class="dashboard _flex">
+        <div class="dash-left">{{> side}}</div>
+        <div class="dash-right _flex-1">
+            {{> Template.dynamic template=content}}
+        </div>
+    </div>
+</template>

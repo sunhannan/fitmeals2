@@ -1,0 +1,21 @@
+<template name="wxOthers">
+    <div class="ff-form">
+        <h1 class="title">微信设置</h1>
+        <div class="feilds">
+            <div class="feild">
+                <label>欢迎语</label>
+                <textarea id="txt" placeholder="欢迎您关注">{{welcome.value}}</textarea>
+            </div>
+            <div class="feild">
+                <label>机器人</label>
+                <select id="robot">
+                    <option value="0" {{checkSelect robot.value false}}>禁用</option>
+                    <option value="1" {{checkSelect robot.value true }}>启用</option>
+                </select>
+            </div>
+            <div class="btns">
+                <div class="btn button13" id="save">保存</div>
+            </div>
+        </div>
+    </div>
+</template>

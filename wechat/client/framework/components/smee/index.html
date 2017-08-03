@@ -1,0 +1,38 @@
+<template name="smee">
+	<div class="ff-form ">
+			<h1 class="title">{{owner.profile.nickname}}</h1>
+			<div class="feilds">
+				
+				<div class="smee-list">
+					{{#each smees}}
+						<div class="item _flex">
+							<div class="avatar">
+								{{#if compare userid currentUser._id}}
+									<div style="background-image:url({{currentUser.profile.avatar}})"></div>
+								{{else}}
+									{{#if compare userid "SYSTEM"}}
+										<div>系统：</div>
+									{{else}}
+										<div style="background-image:url({{owner.profile.avatar}})"></div>
+									{{/if}}
+								{{/if}}
+							</div>
+							<div class="_flex-1 info">
+								<div class="time">{{timeformat createdAt}}</div>
+								<div class="ct">{{content}}</div>
+							</div>
+						</div>
+					{{/each }}
+				
+				</div>
+				<div class="feild">
+					<label>内容</label>
+					<textarea id="content"></textarea>
+				</div>
+				<div class="btns">
+					<div class="btn button13" id="send">发送</div>
+					<div class="close button13" onclick="popup.hide()">关闭</div>
+				</div>
+			</div>
+		</div>
+</template>

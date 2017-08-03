@@ -1,0 +1,12 @@
+<template name="innerQrcode">
+	<div class="ff-form">
+			<h1 class="title">{{title}}</h1>
+			<h2 class="sub">{{desc}}</h2>
+			<div class="feilds" style="text-align:center;">
+				{{> QrCode text=url size=225 }}
+				<div class="btns" style="padding-left:0">
+					<div class="close button13" onclick="popup.hide()">关闭</div>
+				</div>
+			</div>
+		</div>
+</template>

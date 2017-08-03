@@ -1,0 +1,53 @@
+<template name="grid">
+    <table class="ui selectable  table" id="{{id}}">
+        <thead>
+            <tr>
+                {{#each option.columns}}
+                <th class="sort-th">{{title}}</th>
+                {{/each }}
+            </tr>
+        </thead>
+        <tbody>
+            {{#each row in rows}}
+            <tr>
+                {{#each column in option.columns}}
+                <td width="{{checkWidth column}}" >{{{cell row column}}}</td>
+                {{/each }}
+            </tr>
+            {{/each }}
+        </tbody>
+        {{#if needFoot}}
+        <tfoot>
+            <tr>
+                <th colspan="{{footerColspan}}">
+                    <div style="display: inline-block;line-height: 40px;">{{#if result }} 共 {{result.total }} 条记录, {{current}}／{{total}}页 {{else}} 数据统计中... {{/if}}</div>
+                    <div class="ui right floated pagination menu">
+                        {{#if compare current 1}}
+                            <a class="icon item ">
+                                <i class="left chevron icon"></i>
+                            </a>
+                        {{else}}
+                            <a class="icon item xwuGrid-left">
+                                <i class="left chevron icon"></i>
+                            </a>
+                        {{/if}}
+                        {{#each num in pages}}
+                        	<a class="item xwuGrid-item  {{#if compare num current }} xuwGrid-item-cur {{/if}}" data-for="{{num}}">{{num}}</a>
+                      	{{/each }}
+                        {{#if compare current total}}
+                            <a class="icon item ">
+                                <i class="right chevron icon"></i>
+                            </a>
+                        {{else}}
+                        <a class="icon item xwuGrid-right">
+                            <i class="right chevron icon"></i>
+                        </a>
+                        {{/if}}
+                        
+                    </div>
+                </th>
+            </tr>
+        </tfoot>
+        {{/if}}
+    </table>
+</template>

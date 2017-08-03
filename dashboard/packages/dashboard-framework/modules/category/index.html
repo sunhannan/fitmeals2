@@ -1,0 +1,7 @@
+<template name="category">
+	{{#if isNotRoot}}
+	<a class="ui right" href="" onclick="_category.children('root')"><i class="icon angle up"></i>返回上级</a>
+	{{/if }}
+	<a class="" href="/category/create{{isChildren}}"><i class="icon plus"></i>添加分类</a>
+    {{>grid option=option id="category"}}
+</template>

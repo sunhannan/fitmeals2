@@ -1,0 +1,12 @@
+<template name="cuser">
+	<div class="cuser _flex">
+		<div class="avatar" style="background-image:url({{user.profile.avatar}})"></div>
+		<div class="_flex-1  info">
+			<div class="_flex">
+				<div class="nickname">{{user.profile.nickname}} </div> 
+				<div class="createdAt">{{friendformat createdAt}}</div>
+			</div>
+			<h1>{{title}}</h1>
+		</div>
+	</div>
+</template>

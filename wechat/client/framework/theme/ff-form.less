@@ -1,0 +1,183 @@
+@import '/client/framework/theme/color.import.less';
+.ff-form {
+    padding: 5px 30px;
+    .title {
+        font-size: 16px;
+        color: @base;
+        line-height: 40px;
+        width: 100%;
+        text-align: center;
+    }
+    .sub{
+        font-size: 14px;
+        color:#666;
+        line-height: 40px;
+        width: 100%;
+        text-align: center;
+    }
+    .line{
+         padding: 5px;
+        line-height: 30px;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        label {
+            color: #666;
+            width: 100px;
+            text-align: right;
+            padding-right: 10px;
+        }
+        .value{
+             -webkit-box-flex: 1;
+            -moz-box-flex: 1;
+            -ms-box-flex: 1;
+            -webkit-flex: 1;
+            flex: 1;
+            b{
+                color:@base;
+                cursor: pointer;
+            }
+        }
+    }
+    .feild {
+        padding: 5px;
+        line-height: 30px;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        label {
+            color: #666;
+            width: 100px;
+            text-align: right;
+            padding-right: 10px;
+        }
+        input[type=text], input[type=number] {
+            width: 100%;
+            height: 30px;
+            padding: 0px 5px;
+            outline: none;
+            -webkit-box-flex: 1;
+            -moz-box-flex: 1;
+            -ms-box-flex: 1;
+            -webkit-flex: 1;
+            flex: 1;
+            border:1px solid #ddd;
+        }
+        select{
+            width: 100%;
+            height: 30px;
+            padding: 0px 5px;
+            outline: none;
+            -webkit-box-flex: 1;
+            -moz-box-flex: 1;
+            -ms-box-flex: 1;
+            -webkit-flex: 1;
+            flex: 1;
+            border:1px solid #ddd;
+        }
+        textarea {
+            width: 100%;
+            height: 80px;
+            padding: 5px;
+            outline: none;
+            -webkit-box-flex: 1;
+            -moz-box-flex: 1;
+            -ms-box-flex: 1;
+            -webkit-flex: 1;
+            flex: 1;
+            resize:none;
+            border:1px solid #ddd;
+        }
+    }
+    .btns{
+    	padding-left:100px;
+    	padding-top:20px;
+    }
+    .btns2{
+        padding-top:20px;
+        text-align: center;
+    }
+    .btn {
+        width: 100px;
+        background: @base;
+        line-height: 35px;
+        text-align: center;
+        display: inline-block;
+    }
+    .markdown{
+        padding: 5px;
+        line-height: 30px;
+        label {
+            color: #666;
+            width: 100px;
+            text-align: right;
+            padding-right: 10px;
+        }
+        textarea{
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+            padding:10px;
+            outline:none;
+            resize:none;
+        }
+    }
+    table{
+        width: 100%;
+        th{
+            text-align: left;
+            height: 40px;
+        }
+        td{
+            height: 40px;
+            .select{
+                color:@base;
+                cursor:pointer;
+            }
+        }
+    }
+}
+@media screen and (max-width: 900px) {
+    .ff-form{
+        .feild{
+            display: block;
+            input[type=text], input[type=number] {
+                height: 40px;
+                padding: 0px 5px;
+                outline: none;
+                border:0;
+                border-bottom: 1px solid #ddd;
+                text-align: center;
+            }
+            textarea {
+                width: 100%;
+                height: 50px;
+                padding: 5px;
+                outline: none;
+                border-bottom: 1px solid #ddd;
+            }
+        }
+         .btns{
+            padding:5px 0;
+         }
+         .list{
+            .th{
+                display: block !important;
+                div{
+                    text-align: left !important;
+                }
+            }
+            .tr{
+                display: block !important;
+                div{
+                    text-align: left !important;
+                }
+            }
+            
+         }
+    }
+}

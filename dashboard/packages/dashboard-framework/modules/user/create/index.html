@@ -1,0 +1,33 @@
+<template name="adminMembersCreate">
+    <div class="min-warp">
+        <div class="ui breadcrumb">
+            <a class="section" href="/">系统首页</a>
+            <div class="divider"> / </div>
+            <a class="section" href="/members">系统用户管理</a>
+            <div class="divider"> / </div>
+            <div class="active section">新建系统用户</div>
+        </div>
+        <div class="ui form">
+            <div class="field">
+                <label>用户姓名:</label>
+                <input type="text" id="nickname" value="" >
+            </div>
+            <div class="field">
+                <label>联系方式:</label>
+                <input type="text" id="tel" value="" >
+            </div>
+            <div class="field">
+                <label>登录邮箱:</label>
+                <input type="email" id="email" value="" >
+            </div>
+            <div class="field">
+                <label>登录密码:</label>
+                <input type="text" id="password" value="" >
+            </div>
+            <div class="ui positive right labeled icon button" id="save">
+                保存
+                <i class="checkmark icon"></i>
+            </div>
+        </div>
+    </div>
+</template>

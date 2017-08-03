@@ -1,0 +1,1 @@
+AdminTrack = new Meteor.Collection("adminTrack");

@@ -1,0 +1,13 @@
+<template name="header">
+    <div class="header-page _flex top_header _animation">
+        <a class="logo _animation" href="/admin"> {{{logo}}}   </a>
+        <div class="center _flex-1 _flex">
+        </div>
+        <div class="right">
+            {{#if currentUser}}
+            <a class="status _animation web-show-inline"  href="/finance/private">{{currentUser.prfile.nickname}} <i class="fa fa-bars"></i></a> {{else}}
+            <a class="status _animation  web-show-inline"  href="/account/login"> 登陆 </a> <b class="web-show-inline">/</b>
+            <a class="status _animation  web-show-inline"  href="/account/regist"> 注册 </a> {{/if}}
+        </div>
+    </div>
+</template>

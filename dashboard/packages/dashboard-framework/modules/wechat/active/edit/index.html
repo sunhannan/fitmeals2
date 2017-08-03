@@ -1,0 +1,73 @@
+<template name="wxActiveEdit">
+    <div class="min-warp">
+        <div class="ui breadcrumb">
+            <a class="section" href="/">系统首页</a>
+            <div class="divider"> / </div>
+            <a class="section" href="/wx/active">微信实时活动</a>
+            <div class="divider"> / </div>
+            <div class="active section">修改 {{active.name}} 信息</div>
+        </div>
+        <div class="ui form">
+            <div class="fields two">
+                <div class="field">
+                    <label>活动名称:</label>
+                    <input type="text" id="name" value="{{active.name}}">
+                </div>
+                <div class="field">
+                    <label>密码:</label>
+                    <input type="number" id="pwd"   value="{{active.pwd}}" placeholder="为空则不需要验证,4位数字">
+                </div>
+            </div>
+            <div class="fields two">
+                <div class="field">
+                    <label>类型:</label>
+                    <select id="category">
+                        {{#each categorys 'root'}}
+                        <optgroup label="{{name}}">
+                            {{#each categorys _id}}
+                            <option value="{{_id}}" {{checkSelect active.category _id }}>{{name}}</option>
+                            {{/each}}
+                        </optgroup>
+                        {{/each}}
+                    </select>
+                </div>
+                <div class="field">
+                    <label>状态:</label>
+                    <select id="status">
+                        <option value="1" {{checkSelect active.status true }}>上线</option>
+                        <option value="0" {{checkSelect active.status false }}>下线</option>
+                    </select>
+                </div>
+            </div>
+            {{>upload id='thumb' label="活动封面" objs=active.thumb}}
+            <div class="fields three">
+                <div class="field">
+                    <label>排序:</label>
+                    <input type="number" id="orderBy" value="{{active.orderBy}}">
+                </div>
+                <div class="field">
+                    <label>推荐状态:</label>
+                    <select id="recommend">
+                        <option value="0" {{checkSelect active.recommend false }}>正常</option>
+                        <option value="1" {{checkSelect active.recommend true }}>推荐</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label>拍照:</label>
+                    <select id="isOpen">
+                        <option value="0" {{checkSelect active.isOpen false }}>关闭</option>
+                        <option value="1" {{checkSelect active.isOpen true }}>开放</option>
+                    </select>
+                </div>
+            </div>
+            <div class="field">
+                <label>活动简介:</label>
+                <textarea id="summary">{{active.summary}}</textarea>
+            </div>
+            <div class="ui positive right labeled icon button" id="save">
+                保存
+                <i class="checkmark icon"></i>
+            </div>
+        </div>
+    </div>
+</template>

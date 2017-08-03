@@ -1,0 +1,33 @@
+{
+  "name": "admin",
+  "private": true,
+  "scripts": {
+    "start": "meteor run"
+  },
+  "dependencies": {
+    "babel-runtime": "^6.23.0",
+    "bcrypt": "^0.8.7",
+    "dragula": "^3.7.2",
+    "https": "^1.0.0",
+    "meteor-node-stubs": "~0.2.0",
+    "video.js": "^5.17.0"
+  },
+  "server": {
+    "host": "server's ip",
+    "username": "username",
+    "password": "password",
+    "env": {}
+  },
+  "setup": {
+    "mongo": true,
+    "path": "/path/to/www"
+  },
+  "deploy": {
+    "appName": "xxxx",
+    "env": {
+      "MONGO_URL": "mongodb://username:password@ip:port/dbname?authSource=admin",
+      "PORT": 4005,
+      "ROOT_URL": "http://dashboard.fitmeals.fami2u.com"
+    }
+  }
+}

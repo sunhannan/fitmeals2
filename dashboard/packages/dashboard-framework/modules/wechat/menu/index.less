@@ -1,0 +1,57 @@
+.wxMenu{
+	width: 400px;
+	padding-right:10px;
+	.item{
+		padding:10px;
+		border-bottom: 1px solid #eee;
+		width: 100%;
+		position: relative;
+		overflow:hidden;
+		word-break:break-all;
+		.sub{
+			padding:5px 20px;
+		}
+	}
+	.item:hover{
+		background:#eee;
+	}
+	.item:hover .del{
+		display: block;
+	}
+	.item2{
+		padding:10px;
+		overflow:hidden;
+		word-break:break-all;
+		width: 100%;
+		position: relative;
+	}
+	.item2:hover{
+		background:#ddd;
+	}
+	.item2:hover .del2{
+		display: block;
+	}
+	.op{
+		padding:10px;
+		width: 100%;
+		cursor: pointer;
+	}
+	.op:hover{
+		background:#0694ca;
+		color:#fff;
+	}
+	.del,.del2{
+		position: absolute;
+		right:10px;
+		top:7px;
+		cursor: pointer;
+		display: none;
+	}
+	.type{
+		padding:5px 0;
+		color:#999;
+	}
+}
+.wxMenu-grid{
+
+}

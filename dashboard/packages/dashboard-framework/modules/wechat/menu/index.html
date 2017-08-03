@@ -1,0 +1,138 @@
+<template name="wxMenu">
+    <div class="wild-warp _flex">
+        <div class="wxMenu">
+        	<div class="op _animation" id="root">
+                <i class="fa fa-list"></i> 微信自定义菜单
+            </div>
+            {{#each menu 'root'}}
+            <div class="item _animation">
+                <div>{{text}}</div>
+                
+                    {{#if children}} 
+							<div class="sub">
+			                    {{#each menu _id }}
+			                    <div class="item2 _animation">
+			                        <div>{{text}}</div>
+			                        <div class="type">
+			                            {{#if compare type "url"}} 
+			                            	[跳转链接] <a href="" target="_blank">{{url}}</a> 
+			                            {{/if }}
+			                            {{#if compare type "media"}} 
+			                            	[媒体图文] {{media.title}}
+			                            {{/if }}
+			                            {{#if compare type "active"}} 
+			                            	[实时活动] {{active.name}}
+			                            {{/if }}
+			                            {{#if compare type "cmedia"}} 
+			                            	[图文列表] {{category.name}}
+			                            {{/if }}
+			                            {{#if compare type "cactive"}} 
+			                            	[实时活动列表] {{category.name}}
+			                            {{/if }}
+			                            {{#if compare type "text"}} 
+			                            	[下发消息] {{link}}
+			                            {{/if }}
+			                            -点击[{{click}}]
+			                        </div>
+			                        
+			                    </div>
+			                    {{/each}}
+			                </div>
+                    {{else}} 
+
+	                    <div class="type">
+								{{#if compare type "url"}} 
+			                            	[跳转链接] <a href="" target="_blank">{{url}}</a> 
+			                            {{/if }}
+			                            {{#if compare type "media"}} 
+			                            	[媒体图文] {{media.title}}
+			                            {{/if }}
+			                            {{#if compare type "active"}} 
+			                            	[实时活动] {{active.name}}
+			                            {{/if }}
+			                            {{#if compare type "cmedia"}} 
+			                            	[图文列表] {{category.name}}
+			                            {{/if }}
+			                            {{#if compare type "cactive"}} 
+			                            	[实时活动列表] {{category.name}}
+			                            {{/if }}
+			                            {{#if compare type "text"}} 
+			                            	[下发消息] {{link}}
+			                            {{/if }}
+			                            -点击[{{click}}]
+	                    </div>
+                    {{/if }}
+                
+                
+            </div>
+            {{/each}}
+           <div class="ui  left labeled icon button" id="sync" style="margin-top:15px;">
+		        <i class="icon fa-cloud-upload"></i>同步
+		    </div>
+        </div>
+        <div class="wxMenu-grid _flex-1">
+        		<div class="ui form">
+        			<div class="field">
+		                <label>操作对象:{{target.text}}</label>
+		            </div>
+				 	<div class="field">
+		                <label>文字:</label>
+		                <input type="text" id="text" value="{{targetText}}" placeholder="展示文字">
+		            </div>
+		            <div class="field">
+		                <label>排序:</label>
+		                <select id="orderBy">
+		                	<option value="1" {{checkSelect target.orderBy 1 }}>1</option>
+		                	<option value="2" {{checkSelect target.orderBy 2 }}>2</option>
+		                	<option value="3" {{checkSelect target.orderBy 3 }}>3</option>
+		                	<option value="4" {{checkSelect target.orderBy 4 }}>4</option>
+		                	<option value="5" {{checkSelect target.orderBy 5 }}>5</option>
+		                </select>
+		            </div>
+		            <div class="field">
+		                <label>跳转地址:</label>
+		                <input type="text" id="url" value="{{target.url}}" placeholder="URL以http://或https://开头,图文以media:,活动以active:,图文类以cmedia:,活动类以cactive:">
+		            </div>
+		            <div class="field">
+		                <div class="ui top attached tabular menu">
+			                <div class="item active" data-tab="t2">媒体图文</div>
+			                <div class="item" data-tab="t3">图文列表</div>
+			                <div class="item" data-tab="t4">实时活动</div>
+			                <div class="item" data-tab="t5">实时活动列表</div>
+			            </div>
+			            <div class="ui bottom attached tab segment active" data-tab="t2">
+							{{>grid option=wxMedia id="wxMedia"}}
+			            </div>
+			            <div class="ui bottom attached tab segment" data-tab="t3">
+			            	{{>grid option=wxMediaCategory id="wxMediaCategory"}}
+			            </div>
+			            <div class="ui bottom attached tab segment" data-tab="t4">
+			            	{{>grid option=wxActive id="wxActive"}}
+			            </div>
+			            <div class="ui bottom attached tab segment" data-tab="t5">
+			            	{{>grid option=wxActiveCategory id="wxActiveCategory"}}
+			            </div>
+		            </div>
+		            {{#if isCreate}}
+		            <div class="ui blue right labeled icon button" id="save">
+		                新建子菜单
+		                <i class="checkmark icon"></i>
+		            </div>
+		            {{/if }}
+		            {{#if isSave}}
+		            <div class="ui positive right labeled icon button" id="update">
+		                保存当前菜单
+		                <i class="checkmark icon"></i>
+		            </div>
+		            {{/if }}
+		            {{#if isDelete}}
+		            <div class="ui red right labeled icon button" id="delete">
+		                删除当前菜单
+		                <i class="remove icon"></i>
+		            </div>
+		            {{/if }}
+		        </div>
+	            
+        </div>
+    </div>
+</template>

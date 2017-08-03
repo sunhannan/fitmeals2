@@ -1,0 +1,48 @@
+<template name="smeeList">
+	<div class="ff-form ">
+			<h1 class="title">消息列表</h1>
+			<div class="feilds">
+				<div class="smee2-list">
+					{{#each smees}}
+						<div class="item _flex">
+							<div class="status {{checkStatus}}" ></div>
+							<div class="avatar">
+								{{#if compare userid currentUser._id}}
+									<div style="background-image:url({{currentUser.profile.avatar}})"></div>
+								{{else}}
+									{{#if compare userid "SYSTEM"}}
+										<div style="background-image:url(/logo.png)"></div>
+									{{else}}
+										<div style="background-image:url({{owner.profile.avatar}})"></div>
+									{{/if}}
+								{{/if}}
+							</div>
+							<div class="nickname">
+								{{#if compare userid currentUser._id}}
+									{{currentUser.profile.nickname}}
+								{{else}}
+									{{#if compare userid "SYSTEM"}}
+										系统管理员
+									{{else}}
+										{{owner.profile.nickname}}
+									{{/if}}
+								{{/if}}
+							</div>
+							<div class="time">{{timeformat createdAt}}</div>
+							<div class="_flex-1 info">{{content}}asdfasdfasdfasdfasdfasdfasdfsadfsadfasdfasdfasdfasdfasfd</div>
+							<div class="op">
+								{{#if compare userid "SYSTEM"}}
+										
+									{{else}}
+										<div class="reply">回复</div>
+									{{/if}}
+							</div>
+						</div>
+					{{/each }}
+				</div>
+				<div class="btns2">
+					<div class="close button13" onclick="popup.hide()">关闭</div>
+				</div>
+			</div>
+		</div>
+</template>
